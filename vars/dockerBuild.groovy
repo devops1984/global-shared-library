@@ -8,13 +8,13 @@ def login() {
 
 def build(String tag) {
     sh """
-        docker build -t "${tag}" .
+        docker build -t k2r2t2/demosharedlib .
     """
 }
 
 def push(String tag) {
     sh """
-        docker push "${tag}"
+        docker push k2r2t2/demosharedlib
     """
 }
 
