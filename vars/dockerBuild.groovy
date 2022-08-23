@@ -17,3 +17,12 @@ def push(String tag) {
         docker push "${tag}"
     """
 }
+
+def deploy() {
+    withKubeCredentials(kubectlCredentials: [[caCertificate: '', clusterName: '', contextName: '', credentialsId: 'K8S', namespace: '', serverUrl: '']]) {
+                   sh """
+                        kubectl apply -f deployment.yml
+				        kubectl rollout restart deployment.v1.apps/demosharedlib-deployment
+                    """
+    }
+        
