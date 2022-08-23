@@ -25,4 +25,4 @@ def deploy() {
 				        kubectl rollout restart deployment.v1.apps/demosharedlib-deployment
                     """
     }
-        
+}  
