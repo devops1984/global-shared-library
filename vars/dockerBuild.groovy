@@ -1,3 +1,9 @@
+def mavenbuild() {
+    sh """
+        mvn clean package -Dv=${BUILD_NUMBER}
+    """
+}
+
 def login() {
     withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'hubUsername', passwordVariable: 'hubPassword')]) {
         sh """
