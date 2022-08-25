@@ -12,13 +12,13 @@ def login() {
     }
 }
 
-def build(String tag) {
+def buildimage(String tag) {
     sh """
         docker build -t k2r2t2/demosharedlib .
     """
 }
 
-def push(String tag) {
+def pushimage(String tag) {
     sh """
         docker push k2r2t2/demosharedlib
     """
